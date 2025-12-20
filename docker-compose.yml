@@ -1,0 +1,19 @@
+services:
+  jenkins:
+    container_name: jenkins
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8080
+      - 8001:8081
+      - 8002:53801
+    volumes:
+      - jenkins-data:/var/jenkins_home
+
+volumes:
+  jenkins-data:
+    external: true
+
+networks:
+  jenkins:
+    external: true
