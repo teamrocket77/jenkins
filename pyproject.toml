@@ -1,0 +1,23 @@
+[project]
+name = "jenkins"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jc>=1.25.6",
+    "python-jenkins>=1.8.3",
+]
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+jenkins = "main:main"
+
+[tool.ruff.lint]
+ignore = ["T201", "D102", "D103", "D100"]
+select = ["ALL"]
